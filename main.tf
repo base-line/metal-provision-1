@@ -1,3 +1,7 @@
+data "template_file" "user_data" {
+  template = file("bootstrap/pkg.sh")
+}
+
 module "device" {
   source = "github.com/andrewpopa/terraform-metal-device.git"
 
@@ -7,5 +11,5 @@ module "device" {
   operating_system = "ubuntu_18_04"
   billing_cycle    = "hourly"
   project_id       = var.project_id
-  user_data        = ""
+  user_data        = data.template_file.user_data.rendered
 }

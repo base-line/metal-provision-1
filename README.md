@@ -25,12 +25,28 @@ vagrant ssh
 
 Create the instance 
 ```bash
-vagrant@metal-cli:~$ metal device create \
+vagrant@metal-cli:/vagrant$ metal device create \
   --hostname tf-ubuntu \
   --plan t1.small.x86 \
   --facility ams1 \
   --operating-system ubuntu_18_04 \
-  --project-id <project-id>
+  --project-id "<project-id>"
+```
+
+Create the instance with userdata
+```bash
+vagrant@metal-cli:/vagrant$ metal device create \
+  --hostname tf-ubuntu \
+  --plan t1.small.x86 \
+  --facility ams1 \
+  --operating-system ubuntu_18_04 \
+  --userdata-file "bootstrap/pkg.sh" \
+  --project-id "<project-id>"
+```
+
+Delete device via cli
+```bash
+metal device delete --id "<device-id>" -f
 ```
 
 ## Using Terraform

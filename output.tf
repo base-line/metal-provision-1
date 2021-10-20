@@ -101,3 +101,56 @@ output "state_userdata" {
   description = "device state"
   value       = module.device_user_data.state
 }
+
+// device with Elastic IP
+
+output "access_private_ipv4_userdata_ip" {
+  description = "private ipv4"
+  value       = module.device_ip.access_private_ipv4
+}
+
+output "access_public_ipv4_userdata_ip" {
+  description = "public ipv4"
+  value       = module.device_ip.access_public_ipv4
+}
+
+output "access_public_ipv6_userdata_ip" {
+  description = "public ipv6"
+  value       = module.device_ip.access_public_ipv6
+}
+
+output "created_userdata_ip" {
+  description = "when it was created"
+  value       = module.device_ip.created
+}
+
+output "hostname_userdata_ip" {
+  description = "hostname"
+  value       = module.device_ip.hostname
+}
+
+output "id_userdata_ip" {
+  description = "device id"
+  value       = module.device_ip.id
+}
+
+output "operating_system_userdata_ip" {
+  description = "device os"
+  value       = module.device_ip.operating_system
+}
+
+output "ssh_key_ids_userdata_ip" {
+  description = "device ssh key"
+  value       = module.device_ip.ssh_key_ids
+}
+
+output "root_password_userdata_ip" {
+  description = "device root password"
+  value       = module.device_ip.root_password
+  sensitive   = true
+}
+
+output "state_userdata_ip" {
+  description = "device state"
+  value       = module.device_ip.state
+}
